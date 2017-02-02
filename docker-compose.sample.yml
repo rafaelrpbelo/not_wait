@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - db:/var/lib/postgresql/data
+    expose:
+      - '5432'
+
+  web:
+    build: .
+    volumes:
+      - .:/app
+      - bundle:/bundle
+    environment:
+      - BUNDLE_PATH=/bundle
+    command: bundle exec rails server -b 0.0.0.0
+    ports:
+      - 3000:3000
+    links:
+      - db
+
+volumes:
+  db:
+  bundle:
