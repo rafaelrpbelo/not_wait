@@ -1,1 +1,54 @@
-<h1>Home#index</h1>
+<h1>Dashboard</h1>
+
+<h3>Calls Queue</h3>
+<table>
+  <thead>
+    <th>Id</th>
+    <th>Driver</th>
+    <th>Updated at</th>
+  </thead>
+  <tbody>
+    <% @dashboard.calls_queue.each do |call| %>
+      <tr>
+        <td><%= call.id %></td>
+        <td><%= call.driver %></td>
+        <td><%= call.updated_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<hr />
+
+<h3>Driver's list</h3>
+<table>
+  <thead>
+    <th>Id</th>
+    <th>Name</th>
+  </thead>
+  <tbody>
+    <% @dashboard.drivers.each do |driver| %>
+      <tr>
+        <td><%= driver.id %></td>
+        <td><%= driver.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h3>Driver's calls list</h3>
+<table>
+  <thead>
+    <th>Id</th>
+    <th>Name</th>
+  </thead>
+  <tbody>
+    <% @dashboard.driver_calls.each do |call| %>
+      <tr>
+        <td><%= call.id %></td>
+        <td><%= call.driver %></td>
+        <td><%= call.final_time %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

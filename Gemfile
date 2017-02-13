@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 
 group :test do
   gem 'rspec-rails', '~> 3.5'
-  gem 'factory_girl', '~> 4.8.0'
+  gem 'factory_girl_rails', '~> 4.8.0'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'database_cleaner', '~> 1.5.3'
 end
